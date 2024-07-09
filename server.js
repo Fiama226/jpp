@@ -14,7 +14,9 @@ app.get('/',(req, res) => {
 pool = new Pool({
   user: 'postgres',
   host: 'db',
-  password: 'root'
+  password: 'root',
+  port: 5432,
+  database: 'postgres',
 })
 pool.connect((err, client, done) => {
   if (err) {
