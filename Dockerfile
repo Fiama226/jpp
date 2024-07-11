@@ -13,6 +13,8 @@ FROM node:${NODE_VERSION}-alpine
 # Use production node environment by default.
 ENV NODE_ENV production
 
+RUN --mount=type=bind,source=./.m2,target=/root/.m2,rw mvn -o install
+
 
 WORKDIR /usr/src/app
 
